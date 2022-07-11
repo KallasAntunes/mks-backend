@@ -12,7 +12,7 @@ import {
 @Entity()
 export class Movie extends BaseEntity {
   @ApiProperty({
-    type: randomUUID,
+    type: String,
     description: 'Identificador do filme',
     example: '752020af-ca53-4638-b0e0-2dc22f2585b7',
   })

@@ -6,7 +6,7 @@ export class BadRequestDto {
   @ApiProperty({
     type: String,
     isArray: true,
-    example: 'Informe a data de lançamento do filme',
+    example: 'Id Incorreto ou não encontrado',
   })
   message: string[];
   @ApiProperty({ type: String, example: 'Bad Request' })
