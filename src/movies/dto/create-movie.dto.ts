@@ -1,3 +1,4 @@
+import { ApiProperty } from '@nestjs/swagger';
 import {
   IsNotEmpty,
   MaxLength,
@@ -6,6 +7,12 @@ import {
 } from 'class-validator';
 
 export class CreateMovieDto {
+  @ApiProperty({
+    example: 'The Batman',
+    description: 'O título do filme',
+    required: true,
+    maxLength: 200,
+  })
   @IsNotEmpty({
     message: 'Informe o título do filme',
   })
@@ -14,6 +21,12 @@ export class CreateMovieDto {
   })
   title: string;
 
+  @ApiProperty({
+    example: 'Um filme de ação e muito drama',
+    description: 'A descrição do filme',
+    required: true,
+    maxLength: 1000,
+  })
   @IsNotEmpty({
     message: 'Informe a descrição do filme',
   })
@@ -22,6 +35,13 @@ export class CreateMovieDto {
   })
   description: string;
 
+  @ApiProperty({
+    example: '2022-07-11',
+    description: 'A data de lançamento do filme',
+    required: true,
+    maxLength: 10,
+    minLength: 10,
+  })
   @IsNotEmpty({
     message: 'Informe a data de lançamento do filme',
   })
@@ -33,6 +53,12 @@ export class CreateMovieDto {
   )
   release_date: string;
 
+  @ApiProperty({
+    example: 120,
+    description: 'A duração do filme em minutos',
+    required: true,
+    minimum: 1,
+  })
   @IsNotEmpty({
     message: 'Informe a duração do filme',
   })

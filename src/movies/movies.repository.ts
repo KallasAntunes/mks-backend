@@ -1,11 +1,11 @@
 import { Movie } from './movies.entity';
-import { CreateMovieDto } from '../dto/create-movie.dto';
+import { CreateMovieDto } from './dto/create-movie.dto';
 import {
   BadRequestException,
   InternalServerErrorException,
 } from '@nestjs/common';
 import { AppDataSource } from '../configs/datasource.config';
-import { UpdateMovieDto } from '../dto/update-movie.dto';
+import { UpdateMovieDto } from './dto/update-movie.dto';
 
 export class MoviesRepository {
   async getMovies(limit: number): Promise<Movie[]> {
@@ -36,7 +36,7 @@ export class MoviesRepository {
     }
   }
 
-  async getMovieById(id: string): Promise<Movie | null> {
+  async getMovieById(id: string): Promise<Movie> {
     try {
       const repository = AppDataSource.getRepository(Movie);
       return await repository.findOneBy({ id });
