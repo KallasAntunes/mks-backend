@@ -1,5 +1,4 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { randomUUID } from 'crypto';
 import {
   BaseEntity,
   Entity,
@@ -59,22 +58,4 @@ export class Movie extends BaseEntity {
   })
   @Column({ nullable: false, type: 'integer' })
   length: number;
-
-  @ApiProperty({
-    example: '2022-07-10 18:15:16.628032',
-    type: String,
-    description: 'A data de criação do filme no sistema',
-    readOnly: true,
-  })
-  @CreateDateColumn()
-  createdAt: Date;
-
-  @ApiProperty({
-    example: '2022-07-10 18:15:16.628032',
-    type: String,
-    description: 'A data da última edição do filme no sistema',
-    readOnly: true,
-  })
-  @UpdateDateColumn()
-  updatedAt: Date;
 }
