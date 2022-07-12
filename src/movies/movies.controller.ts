@@ -48,7 +48,7 @@ export class MoviesController {
   @ApiQuery({
     name: 'limit',
     type: Number,
-    description: 'Limita o número de filmes returnados',
+    description: 'Limita o número de filmes retornados',
     required: false,
     example: 2,
   })
@@ -98,7 +98,7 @@ export class MoviesController {
   @ApiParam({
     name: 'id',
     type: String,
-    description: 'The id of the movie',
+    description: 'O id do filme',
     required: true,
     example: 'f9c6f6ab-bbc9-4e17-9c13-a23ac74bdd73',
   })
